@@ -53,7 +53,7 @@ def add_temperature():
     temperature = data["temperature"]
     room_id = data["room"]
     try:
-        date = datetime.strptime(data["date"], " %d-%m-%Y  %H:%M:%S")
+        date = datetime.strptime(data["date"], "%d/%m/%Y  %H:%M:%S")
     except KeyError:
         date = datetime.now(timezone.utc)
 
@@ -63,3 +63,15 @@ def add_temperature():
             cursor.execute(INSERT_TEMP, (room_id, temperature, date))
 
     return {"message": " Temperature added."}, 201
+
+
+@app.get("/api/average")
+def get_global_avg():
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(GLOBAL_AVG)
+            average = cursor.fetchone()[0]
+            cursor.execute(GLOBAL_NUMBER_OF_DAYS)
+            days = cursor.fetchone()[0]
+
+    return {"average": round(average, 2), "days": days}
