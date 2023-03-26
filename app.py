@@ -21,6 +21,9 @@ GLOBAL_NUMBER_OF_DAYS = (
     """SELECT COUNT(DISTINCT DATE(date)) AS days FROM temperatures;"""
 )
 
+# Sad mozemo i da uzmemo prosek temperaturu kroz citavu kucu
+GLOBAL_AVG = """SELECT AVG(temperature) as average FROM temperatures;"""
+
 load_dotenv()
 
 app = Flask(__name__)
