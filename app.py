@@ -16,6 +16,11 @@ INSERT_TEMP = (
     "INSERT INTO temperatures (room_id, temperature, date) VALUES (%s, %s, %s);"
 )
 
+# Ovo treba da predstavlja broj koji pokazuje broj dana, odnosno broj dana zabelezinih podataka
+GLOBAL_NUMBER_OF_DAYS = (
+    """SELECT COUNT(DISTINCT DATE(date)) AS days FROM temperatures;"""
+)
+
 load_dotenv()
 
 app = Flask(__name__)
