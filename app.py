@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from flask import Flask
+from flask import Flask, request
 from dotenv import load_dotenv
 
 CREATE_ROOMS_TABLE = (
@@ -31,6 +31,16 @@ url = os.getenv("DATABASE_URL")
 connection = psycopg2.connect(url)
 
 
-@app.get("/")
-def home():
-    return "Hello world"
+# Svaki put kada korisnik unese neku temperaturu potrebno je da se navede za koju sobu, jer bez toga imamo samo temperaturu
+# Post koristimo za dodavanje podataka dok Put koristimo za azuriranje podataka
+@app.post("/api/room")
+def create_room():
+    data = request.get_json()
+    name = data["name"]
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute(CREATE_ROOMS_TABLE)
+            cursor.execute(INSERT_ROOM_RETURN_ID, (name,))
+            room_id = cursor.fetchone()[0]
+
+    return {"id": room_id, "message": f"Room {name} created."}, 201
