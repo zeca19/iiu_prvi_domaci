@@ -87,14 +87,14 @@ Nakon toga idemo na unos temperature
 Ovde je potrebno da unesemo id sobe za koju unosimo temperaturu i temperaturu za tu sobu.Datum je opcioni parametar, ako ga stavimo onda gleda taj datum, ako ga ne stavimo unosi trenutni datum pomoću datetime modula
 
 
-![Kreiranje temperature](./images/iiu_domaci_2)
+![Kreiranje temperature](https://github.com/zeca19/iiu_prvi_domaci/blob/master/images/iiu_domaci_2.png?raw=true)
 
 
 Sad za dobijanje prosečne temperature i broj dana nije potrebno nikakav parametar da se unosi jedino da se pristupi
 
 
 
-![Vraćanje podataka](./images/iiu_domaci_3)
+![Vraćanje podataka](https://github.com/zeca19/iiu_prvi_domaci/blob/master/images/iiu_domaci_3.png?raw=true)
 
 
 
@@ -102,12 +102,12 @@ Vidimo sad kako je to sve sačuvano na ElephantSql
 
 Sačuvana soba 
 
-![Čuvanje sobe](./images/iiu_domaci_4)
+![Čuvanje sobe](https://github.com/zeca19/iiu_prvi_domaci/blob/master/images/iiu_domaci_4.png?raw=true)
 
 
 Čuvanje temperature
 
-![Čuvanje temperature](./images/iiu_domaci_5)
+![Čuvanje temperature](https://github.com/zeca19/iiu_prvi_domaci/blob/master/images/iiu_domaci_5.png?raw=true)
 ## Authors
 
 - [@Nađa Perić](https://www.github.com/nadjaperic)
