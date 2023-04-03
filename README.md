@@ -79,7 +79,7 @@ Start the server
 
 Prilikom kreiranja sobe potrebno je samo uneti naziv sobe i povratna informacija dole treba da ispiše da li je soba kreirana i sačuvana ili je došlo do problema
 
-![Kreiranje sobe](./images/iiu_domaci_1)
+![Kreiranje sobe](https://github.com/zeca19/iiu_prvi_domaci/blob/master/images/iiu_domaci_1.png?raw=true)
 
 
 Nakon toga idemo na unos temperature
