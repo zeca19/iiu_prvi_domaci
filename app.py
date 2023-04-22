@@ -85,7 +85,7 @@ def delete_room():
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute(
-                    "DELETE FROM rooms WHERE  room_id=%s", (room_id,))
+                    "DELETE FROM rooms WHERE  id=%s", (room_id,))
 
     except(Exception, psycopg2.DatabaseError) as error:
         print(error)
