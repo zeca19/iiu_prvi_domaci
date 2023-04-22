@@ -75,3 +75,19 @@ def get_global_avg():
             days = cursor.fetchone()[0]
 
     return {"average": round(average, 2), "days": days}
+
+
+@app.delete("/api/delete/")
+def delete_room():
+    try:
+        data = request.get_json()
+        room_id = data["id"]
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    "DELETE FROM rooms WHERE  room_id=%s", (room_id,))
+
+    except(Exception, psycopg2.DatabaseError) as error:
+        print(error)
+
+    return {"message": "Room is deleted."}, 201
